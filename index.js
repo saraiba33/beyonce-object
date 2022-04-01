@@ -86,11 +86,15 @@ const beyonceHash = {
 
 // 1. Print all the songs
 function printAllSongs() {
-    console.log(beyonceHash.hits)
+    beyonceHash.hits.forEach(function(song) {
+        console.log(song)
+    })
 }
 // 2. Print all the movies
 function printAllMovies() {
-    console.log(beyonceHash.movies)
+    beyonceHash.movies.forEach(function(movie) {
+        console.log(movie)
+    })
 }
 // 3. Return an array of all Beyonce's hit song titles
 function hitSongTitles() {
@@ -108,7 +112,7 @@ function songsWithBodySuits() {
 }
 // 6. Return an array with all of the songs where Beyonce's fierceness is greater than or equal to a given number
 function getSongsByFiercenessGTE(fierceness) {
-    console.log(beyonceHash.hits.filter(hit => hit.fierceness >= fierceness))
+    return beyonceHash.hits.filter(hit => hit.fierceness >= fierceness)
 }
 // 7. Return an array with all of the movies Beyonce made after or during a given year
 function getMoviesByDateGTE(year) {
@@ -191,6 +195,8 @@ function movieRatingsByName() {
         }
     }, {})
 }
+
+
 // 21. Return an object with Beyonce's hairstyles as the keys and a tally of each hairstyle, eg. `{ "blonde": 3, ... }`
 function hairStyleFrequency() {
     let allStyles = beyonceHash.hits.flatMap(hit => hit.hair)
